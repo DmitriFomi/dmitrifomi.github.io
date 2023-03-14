@@ -1,0 +1,37 @@
+.para1:hover {
+    cursor: pointer;
+}
+
+.link1:hover {
+    color: aquamarine;
+}
+
+.link1:active {
+    color: brown;
+}
+
+.link2:visited {
+    color: chartreuse;
+}
+
+.link1 {
+    text-decoration: none;
+}
+
+.para2::before {
+    content: "Testime: ";
+}
+
+.currency::after {
+    content: " \26D4"; /* Unicode sümbolid*/
+}
+
+/* Paaris Elemendid */
+.testdiv > p:nth-child(2n) {
+    background-color: rgb(23, 86, 141);
+}
+
+/* Paaritu Elemendid */
+.testdiv > p:nth-child(2n + 1) {
+    background-color: rgb(23, 141, 102);
+}
