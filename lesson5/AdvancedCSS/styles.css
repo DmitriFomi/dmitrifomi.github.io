@@ -23,7 +23,7 @@
 }
 
 .currency::after {
-    content: " \26D4"; /* Unicode sümbolid*/
+    content: " \20AC"; /* Unicode sümbolid*/
 }
 
 /* Paaris Elemendid */

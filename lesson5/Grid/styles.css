@@ -134,6 +134,7 @@ div {
 .fromGrid {
     display: flex;
     flex-wrap: wrap;
+    /*gap: 1px;*/
 }
 
 .item1-f {
