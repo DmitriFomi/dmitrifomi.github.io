@@ -79,6 +79,9 @@ function NoWinner() {
     document.getElementById("winnerDiv").style.display = "block";
 }
 
-/*for(var i = 0; i < tiles.length; i++) { // Loop all elements.
-    tiles[i].addEventListener('click', MakeMove(i));
-}*/
+
+for(let i = 0; i < tiles.length; i++) { // Loop all elements.
+    tiles[i].addEventListener('click', function() {
+        MakeMove(i);
+    });
+}
