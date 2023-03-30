@@ -7,9 +7,9 @@
     </head>
     <body>
         <h1>Tic Tac Toe</h1>
-        <h2>Player: <span id="palyer">X</span></h2>
+        <h2>Player: <span id="palyer">X</span> <button class="btn btn-primary" onclick="Restart()">Restart</button></h2>
         <!-- <button class="btn btn-primary" id="start" onclick="startGame()">START</button> -->
-        <div class="container">
+        <div class="container" id="gameBoard">
             <div class="row">
                 <div class="tile col-4"></div>
                 <div class="tile col-4"></div>
@@ -29,11 +29,16 @@
         <div class="text-center winner" id="winnerDiv">
             <p id="winner"></p>
         </div>
+        <br>
+        
+        <div class="container" id="leaderboard">            
+        </div>
+        <br>
         <ul>
-            <li>CPU ehk AI</li>
-            <li>History - Json lokaalselt</li>
-            <li>Restart - Ilma Refresh</li>
-            <li>Kui on võitja siis ei peaks edasi mängima</li>
+            <li>CPU ehk AI - DONE</li>
+            <li>History - Json lokaalselt - DONE</li>
+            <li>Restart - Ilma Refresh - DONE</li>
+            <li>Kui on võitja siis ei peaks edasi mängima - DONE</li>
         </ul>
         <script src="./scripts.js"></script>
     </body>

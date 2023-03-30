@@ -25,7 +25,7 @@ div.winner {
     margin-top: 50px;
     font-size: 60px;
     font-weight: bold;
-    display: none;
+    /*display: none;*/
 }
 
 .tileX {
