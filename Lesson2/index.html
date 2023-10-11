@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Lesson 2</title>
+    </head>
+    <body>
+        <h1>Lesson 2</h1>
+        <a href="https://www.w3schools.com/html/default.asp">w3 Schools</a>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <a href="https://www.google.com/">Linkgi tekst</a><br> <!-- Link, hyperlink -->
+        <a target="_blank" href="https://www.google.com/">Uues aknas</a>
+        <!-- <a kõik atribuudid asuvad siin > Tekst mida kasutja näeb asub kogu aeg siin </a>-->
+        <!-- href -> kuhu suunatakse -->
+        <!-- välised lingid peavad sisaldama https://.... -->
+        <!--
+            http  - töötab port 80
+            https - töötab port 443 ja 8443
+        -->
+        <!-- CTRL + hiir teeb uues aknas lehe lahti -->
+        <!-- Hiire rulli peale vajutada teeb kaa lahti uues aknas -->
+        <!-- CTRL + SHIFT + T - taastab vana lehe -->
+        <br> <!-- uus rida -->
+        <hr> <!-- Horisontal line -->
+        <ol> <!-- Organised list -->
+            <li>Esimene</li> <!-- List Item -->
+            <li>Teine</li>
+            <ol>
+                <li>Esimene</li>
+                <li>Teine</li>
+            </ol>
+        </ol>
+        <ul> <!-- Unorganised List -->
+            <li>Esimene</li>
+            <li>Teine</li>
+            <ul>
+                <li>Esimene</li>
+                <li>Teine</li>
+                <ul>
+                    <li>Esimene</li>
+                    <li>Teine</li>
+                </ul>
+            </ul>
+        </ul>
+        <!-- TAB liiguda paremale -->
+        <!-- SHIFT + TAB liiguta vasakule -->
+        <table> <!-- Tabel -->
+            <tr>
+                <th>Nimi</th> <!-- Table Heading -->
+                <th>Linn</th>
+            </tr>
+            <tr> <!-- Tabeli rida -->
+                <td>Esimene</td> <!-- Table data ehk sisu -->
+                <td>Teine</td>
+            </tr> 
+            <tr>
+                <td>Kolmas</td>
+                <td>Neljas</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td colspan="5">1</td>
+            </tr>
+            <tr>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td rowspan="2">2</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>5</td>
+            </tr>
+        </table>
+        <p>Lorem <u>ipsum</u> <del>dolor sit amet</del><br>consectetur adipisicing elit. Placeat, nemo? 2<sup>2</sup> = 4. Log<sub>10</sub> = 1</p>
+        <p><b>Lorem</b> <i>ipsum</i>, <strong>dolor</strong> sit <span> amet</span> consectetur adipisicing.</p>
+        <!-- Nesting ehk pesetsemine -->
+        <div> <!-- tühi nähtamatu kast -->
+            <p>Lorem, ipsum.</p>
+            <p>Lorem, ipsum.</p>
+        </div>
+        <!-- kasti mudel margin, Padding, sisu, border-->
+        <img src="./pilt1.jpg"> <!-- Image ehk pilt-->
+        <img src="./pildid/pilt2.jpg">
+        <img src="../Lesson1/pildid/pilt3.jpg" height="100" width="150">
+        <img src="../../../pildid/pilt2.jpg" alt="Space image">
+        <!-- . algust koht / kaustad | .. 1 kaust tagasi -->
+        <br>
+
+        <!--<iframe src="https://moc.ee/en/about-us/" width="500" height="500"></iframe>
+        <iframe width="660" height="315" src="https://www.youtube.com/embed/H2bTls5RCKQ?si=ggscjo9gYDTN2io2&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>-->
+        <br>
+
+        <form action="http://localhost/testlinks/test.php" method="GET">
+            <label>Username</label><br>
+            <input type="text" name="username"><br>
+            <label>Passwrod</label><br>
+            <input type="password" name="password"><br>
+            <label>Language:</label><br>
+            Inglise: <input type="radio" name="language" value="Eng"><br>
+            Eesti: <input type="radio" name="language" value="Est"><br>
+            Vene: <input type="radio" name="language" value="Rus"><br>
+            <br>
+            <label>Language:</label><br>
+            Inglise: <input type="checkbox" name="language2" value="Eng"><br>
+            Eesti: <input type="checkbox" name="language3" value="Est"><br>
+            Vene: <input type="checkbox" name="language4" value="Rus"><br>
+            <input type="color" name="color"><br>
+            <input type="date" name="data"><br>
+            Email: <input type="email" name="email"><br>
+            Number: <input type="number" name="number">
+            <input type="submit" value="Saada">
+        </form>
+        <!-- HTML Injection -->
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+    </body>
+</html>
