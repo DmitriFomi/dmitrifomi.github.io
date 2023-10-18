@@ -1,0 +1,264 @@
+.coloredDiv {
+    background-color: grey;
+}
+
+/* > nesting elemendid */
+.coloredDiv > div {
+    background-color: aquamarine;
+    font-size: 21px;
+    padding: 5px;
+    margin: 5px;
+}
+
+.flexDiv {
+    display: flex;
+}
+
+.flexWrap {
+    flex-wrap: wrap;
+}
+
+.flexColumn {
+    flex-direction: column;
+    /*flex-direction: column-reverse;
+    flex-direction: row-reverse;*/
+}
+
+.flexJustify {
+    /* liigutamine vasakule ja paremale */
+    /*justify-content: start;
+    justify-content: end;
+    justify-content: space-around;
+    justify-content: space-between;
+    justify-content: space-evenly;*/
+    justify-content: center;
+}
+
+.flexAlign {
+    /* liigutamine alla ja ülesse */
+    height: 200px;
+    /*align-items: start;
+    align-items: end;
+    align-items: stretch;*/
+    align-items: center;
+}
+
+.flexAlign2 {
+    height: 200px;
+    flex-wrap: wrap;
+    /*align-content: space-around;
+    align-content: space-between;
+    align-content: start;
+    align-content: end;*/
+    align-content: center;
+}
+
+.flexChild > div {
+    flex-basis: 50px;
+}
+
+.flexChild > div:nth-child(3) {
+    flex-basis: 200px;
+}
+
+/*
+    Paaris - 2 4 6 -> 2n / even
+    Paaritu - 3 7 9 -> 2n + 1 / odd
+*/
+/*
+            -1 0 1 2 3 4
+    n       -1 0 1 2 3 4
+    n+1     0  1 2 3 4 5
+    2n      -2 0 2 4 6 8
+    2n+1    -1 1 3 5 7 9
+
+*/
+.flexChild2 > div:nth-child(2n + 1) {
+    background-color: brown;
+}
+
+.flexMedia {
+    justify-content: center;
+}
+
+/* Media Query */
+@media (max-width: 500px) {
+    .flexMedia {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 600px) {
+    .flexMedia {
+        background-color: brown;
+    }
+}
+
+@media (min-width: 500px) and (max-width: 600px) {
+    .flexMedia > div {
+        background-color: green;
+    }
+}
+
+@media (min-width: 800px) and (max-width: 1000px) {
+    .flexMedia > div {
+        background-color: rgb(138, 118, 19);
+    }
+}
+
+@media (min-width: 1100px) {
+    .flexMedia > div {
+        background-color: rgb(36, 14, 204);
+    }
+}
+
+.gridDiv {
+    display: grid;
+}
+
+.gridAutoCol {
+    grid-template-columns: auto auto auto ;
+}
+
+.gridFixCol {
+    grid-template-columns: auto 100px auto auto;
+}
+
+.gridFixRow {
+    grid-template-rows: auto 400px auto;
+    height: 700px;
+}
+
+.gridJustify {
+    justify-content: start;
+    justify-content: end;
+    justify-content: space-around;
+    justify-content: space-between;
+    justify-content: space-evenly;
+    justify-content: center;
+}
+
+.gridAlign {
+    align-content: start;
+    align-content: end;
+    align-content: space-around;
+    align-content: space-between;
+    align-content: space-evenly;
+    align-content: center;
+    height: 500px;
+}
+
+.homeFlex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.homeFlexHeader {
+    width: 100%;
+}
+
+.homeFlexSide {
+    width: 20%;
+}
+
+.homeFlexCont {
+    width: 73.5%;
+    height: 500px;
+}
+
+.homeFlexFooter {
+    width: 100%;
+}
+
+.homeGrid {
+    display: grid;
+    grid-template-rows: auto 500px auto;
+    grid-template-columns: 20% auto;
+}
+
+.homeGridHeader, .homeGridFooter {
+    grid-column: 1 / 3;
+}
+
+.homeGrid2 {
+    display: grid;
+    grid-template-columns: 20% auto;
+    grid-template-areas: 
+    'header header'
+    'side cont'
+    'footer footer';
+}
+
+.homeGridHeader2 {
+    grid-area: header;
+}
+
+.homeGridSide2 {
+    grid-area: side;
+}
+
+.homeGridCont2 {
+    grid-area: cont;
+    height: 500px;
+}
+
+.homeGridFooter2 {
+    grid-area: footer;
+}
+
+@media (max-width: 600px) {
+    .homeFlex {
+        flex-direction: column;
+    }
+
+    .homeFlexHeader, .homeFlexSide, .homeFlexCont, .homeFlexFooter {
+        width: 96%;
+    }
+
+    .homeGrid {
+        grid-template-columns: auto;
+        grid-template-rows: auto auto 500px auto;
+    }
+
+    .homeGridHeader, .homeGridFooter {
+        grid-column: 1 / 2;
+    }
+
+    .homeGrid2 {
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-areas: 'header'
+        'side'
+        'cont'
+        'footer';
+    }
+}
+
+.extraGrid {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto;
+    grid-template-rows: auto auto auto auto auto;
+}
+
+.extraGrid > div:nth-child(1) {
+    grid-column: 1 / 8;
+}
+
+.extraGrid > div:nth-child(6),
+.extraGrid > div:nth-child(14) {
+    grid-column: 5 / 7;
+}
+
+.extraGrid > div:nth-child(8),
+.extraGrid > div:nth-child(13) {
+    grid-column: 1 / 4;
+}
+
+.extraGrid > div:nth-child(9) {
+    grid-column: 4 / 5;
+    grid-row: 3 / 6;
+}
+.extraGrid > div:nth-child(13),
+.extraGrid > div:nth-child(14) {
+    grid-row: 4 / 6;
+}
