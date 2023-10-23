@@ -227,7 +227,8 @@
     .homeGrid2 {
         display: grid;
         grid-template-columns: auto;
-        grid-template-areas: 'header'
+        grid-template-areas: 
+        'header'
         'side'
         'cont'
         'footer';
@@ -237,7 +238,7 @@
 .extraGrid {
     display: grid;
     grid-template-columns: auto auto auto auto auto auto auto;
-    grid-template-rows: auto auto auto auto auto;
+    grid-template-rows: auto auto auto auto auto
 }
 
 .extraGrid > div:nth-child(1) {
@@ -258,7 +259,72 @@
     grid-column: 4 / 5;
     grid-row: 3 / 6;
 }
+
 .extraGrid > div:nth-child(13),
 .extraGrid > div:nth-child(14) {
     grid-row: 4 / 6;
+}
+
+.bigFlex {
+    display: flex;
+    flex-direction: column;
+}
+
+.bigFlexSecond,
+.bigFlexThird {
+    display: flex;
+    background-color: rgb(8, 121, 84) !important;
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+    padding-right: 0px !important;
+    padding-left: 0px !important;
+}
+
+.bigFlexSecond > div,
+.bigFlexThird > div {
+    flex-grow: 1;
+}
+
+.bigFlexThird > div:nth-child(1) {
+    flex-grow: 10;
+}
+
+.bigFlexThird > div:nth-child(2) {
+    flex-grow: 2;
+}
+
+.bigFlexThird > div:nth-child(3) {
+    flex-grow: 1;
+}
+
+.bigFlexSecond > div:nth-child(5) {
+    flex-grow: 2.6;
+}
+
+.bigFlexThird {
+    display: flex;
+    background-color: rgb(17, 50, 39) !important;
+}
+
+.bigFlexThirdSub1 {
+    display: flex;
+    flex-grow: 3;
+    background-color: rgb(56, 86, 76) !important;
+    flex-wrap: wrap;
+}
+
+.bigFlexThirdSub1 > div:nth-child(1),
+.bigFlexThirdSub1 > div:nth-child(2) {
+    width: 35%;
+}
+
+.bigFlexThirdSub1 > div:nth-child(3) {
+    flex-grow: 1;
+}
+
+.bigFlexThirdSub2 {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(35, 38, 37) !important;
+    flex-grow: 1;
 }
