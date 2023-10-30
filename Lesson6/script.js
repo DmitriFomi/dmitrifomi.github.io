@@ -174,6 +174,7 @@ function NewExercise(min, max) {
     }
 }
 
+let counter2 = 0;
 function Answer() {
     let exerciseGuess = parseFloat(document.getElementById("exerciseA").value);
     if(sum == exerciseGuess) {
@@ -181,6 +182,10 @@ function Answer() {
     } else {
         document.getElementById("exerciseSum").style.color = "red";
     }
-
+    //counter2 = counter2 + 1;
+    counter2++;
     document.getElementById("exerciseSum").innerHTML = exerciseGuess;
+    if(counter2 == 3) {
+        document.getElementById("btnAnswer").disabled = true;
+    }
 }

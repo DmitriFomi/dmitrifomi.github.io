@@ -1,0 +1,20 @@
+.tictactoeCont {
+    font-size: 50px;
+    width: 240px;
+}
+
+.tictactoeCont > .row > div:nth-child(2) {
+    border-right: 5px solid;
+    border-left: 5px solid;
+}
+
+.tictactoeCont > .row:nth-child(2) {
+    border-top: 5px solid;
+    border-bottom: 5px solid;
+}
+
+.tictactoeCont > .row > div {
+    height: 80px;
+    width: 80px;
+    cursor: pointer;
+}
