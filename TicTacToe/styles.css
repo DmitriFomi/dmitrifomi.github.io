@@ -1,20 +1,43 @@
-.tictactoeCont {
+.tictactoeCont,
+.tictactoeContHistory {
     font-size: 50px;
     width: 240px;
 }
 
-.tictactoeCont > .row > div:nth-child(2) {
+.tictactoeCont > .row > div:nth-child(2), 
+.tictactoeContHistory > .row > div:nth-child(2) {
     border-right: 5px solid;
     border-left: 5px solid;
 }
 
-.tictactoeCont > .row:nth-child(2) {
+.tictactoeCont > .row:nth-child(2),
+.tictactoeContHistory > .row:nth-child(2) {
     border-top: 5px solid;
     border-bottom: 5px solid;
 }
 
-.tictactoeCont > .row > div {
+.tictactoeCont > .row > div,
+.tictactoeContHistory > .row > div {
     height: 80px;
     width: 80px;
     cursor: pointer;
+}
+
+.btn {
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
+#moveEl {
+    margin-top: 10px;
+}
+
+#savedGames {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.historymargin {
+    margin-right: 10px;
+    margin-bottom: 10px;
 }
