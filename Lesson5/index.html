@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Bootstrap</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <link rel="stylesheet" href="./styles.css">
+    </head>
+    <body>
+        <h1>Bootstrap</h1>
+        <h2>Grid system in Bootstrap</h2>
+        <!-- Jaguneb 12 osaks -->
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-12">1</div>
+                <div class="col-3">2</div>
+                <div class="col-3">3</div>
+                <div class="col-3">4</div>
+                <div class="col-3">5</div>
+                <div class="col-7">6</div>
+                <div class="col-5">7</div>
+            </div>
+            <div class="row">
+                <div class="col-6 col-md-12" >8</div>
+                <div class="col">9</div>
+                <div class="col">10</div>
+                <div class="col">11</div>
+                <div class="col">12</div>
+            </div>
+        </div>
+
+        <h2>KKK ehk kippuma korduvad küsimusqd ehk FAQ ehk Accordion</h2>
+        <div class="accordion" id="accordionTest">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#answ1" aria-controls="collapse1">
+                        Question 1
+                    </button>
+                </h2>
+                <div class="accordion-collapse collapse" id="answ1" data-bs-parent="accordionTest">
+                    <div class="accordion-body">
+                        Vastus
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#answ2" aria-controls="collapse1">
+                        Question 2
+                    </button>
+                </h2>
+                <div class="accordion-collapse collapse" id="answ2" data-bs-parent="accordionTest">
+                    <div class="accordion-body">
+                        Vastus 2
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- TODO JS dünaamiliselt lisame kaardid juurde -->
+        <h2>Card</h2>
+        <div class="card" style="width: 200px;">
+            <img src="./Space1.jpg">
+            <div class="card-body">
+                <h5 class="card-title">Student 1</h5>
+                <p class="card-text">Täna oli tubli</p>
+                <a class="btn btn-success" href="#" style="color: black;">Read More</a>
+            </div>
+        </div>
+        <p class="custom">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, vel.</p>
+        <div class="carousel slide" id="slide1" data-bs-ride="carousel" style="width: 200px;">
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="3000">
+                    <img src="./Space1.jpg" class="d-block" style="width: 100%; height: 150px;">
+                </div>
+                <div class="carousel-item" data-bs-interval="10000">
+                    <img src="./sapce2.avif" class="d-block" style="width: 100%; height: 150px;">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#slide1" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#slide1" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+
+
+        <div id="carouselExampleIndicators" class="carousel slide">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="./sapce2.avif" class="d-block w-100" alt="..." style="height: 250px;">
+              </div>
+              <div class="carousel-item">
+                <img src="./Space1.jpg" class="d-block w-100" alt="..." style="height: 250px;">
+              </div>
+              <div class="carousel-item">
+                <img src="./Space1.jpg" class="d-block w-100" alt="..." style="height: 250px;">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+        <h2>Menu / navbar</h2>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"><img src="./Space1.jpg" height="50px"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav1" aria-expanded="false">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="nav1">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link active" href="#">Lesson1</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Lesson2</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" href="#">Homework</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Homework 1</a></li>
+                                <li><a class="dropdown-item" href="#">Homework 2</a></li>
+                                <li><a class="dropdown-item" href="#">Homework 3</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <ul class="nav nav-pills flex-column">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#">Active</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link  active" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+            </li>
+        </ul>
+        <form>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-6">
+                        <label for="exampleInputEmail1" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <label for="exampleInputPassword1" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1">
+                    </div>
+                    <div class="col-12">
+                        <label for="exampleInputPassword1" class="form-label">Comments</label>
+                        <textarea type="tex" class="form-control" cols="5" id="exampleInputPassword1"></textarea>
+                    </div>
+                    <div class="col-12" style="display: flex;justify-content: flex-end; margin-top: 5px;">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </div>
+            </div>            
+          </form>
+          
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="#">Sõiduautod</a></li>
+              <li class="breadcrumb-item"><a href="#">Audi</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Audi A1</li>
+            </ol>
+          </nav>
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="#">Buss</a></li>
+              <li class="breadcrumb-item"><a href="#">BMW</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Turbo Buss</li>
+            </ol>
+          </nav>
+        <div id="liveAlertPlaceholder"></div>
+        <button type="button" class="btn btn-primary" id="liveAlertBtn">Show live alert</button>
+        <a target="_blank" href="https://www.w3schools.com/js/">Javascrpit</a>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    </body>
+</html>
