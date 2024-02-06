@@ -301,8 +301,12 @@ function sum2num(num1, num2) {
 console.log("-------------");
 sum2num(5, 6);
 sum2num(51, 9);
-
+console.log("-------------");
+for(let i = 1; i <= 10; i++) {
+    let arv1 = 5;
+    console.log(arv1 + " + " + i + " = " + (arv1 + i));
+}
 
 
 // teha loop 1 -> 10 mis liidab kokku arv1 + iteratsiooniga. ja printida seda consooli ilusti
-// ehk tehe ssab konsoolis näha koos vastusega
+// ehk tehe saab konsoolis näha koos vastusega
