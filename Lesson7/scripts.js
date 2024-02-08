@@ -61,6 +61,8 @@ let genNum2 = 0;
 let correctAns = 0;
 let life = 3; // Ehk katsed
 
+const diffNames = ["easy", "medium", "hard"];
+
 
 
 function xAnswer() {
@@ -69,6 +71,31 @@ function xAnswer() {
     let corAns = document.getElementById("corAns");
     let lives = document.getElementById("lives");
     ansX.innerHTML = x;
+
+    // Moodul ehk jääk
+    /*
+        1 / 2 = 1
+        2 / 2 = 0
+        3 / 2 = 1 -> 1 * 2 = 2 + 1 
+        4 / 2 = 0 2 * 2 = 4
+
+        1 / 5 = 1
+        2 / 5 = 2
+        3 / 5 = 3 
+        4 / 5 = 4 
+        5 / 5 = 0
+        6 / 5 = 1, sest 1 * 5 = 5 + 1 = 6
+        7 / 5 = 2, 1 * 5 = 5 + 2 = 7 
+        10 / 5 = 0, sest 2 * 5 = 10
+        ...
+
+        x % 2 = 0 == paaris
+        x % 2 = 1 == paaritu
+
+    */
+
+    
+
     if(genNum1 + genNum2 == x) {
         correctAns++;
         ansX.className = "";
@@ -79,7 +106,29 @@ function xAnswer() {
         ansX.className = "bg-danger";
     }
     corAns.innerHTML = correctAns;
+
+
+    // iga 5 vastus
+    if(correctAns % 5 == 0) {
+        life++;
+    }
+
+    // iga 15 vastus
+
+    if(correctAns % 15 == 0) {
+        let currentCheckedDiff = document.querySelector("input[name='difficulty']:checked").value;
+        let difPos = diffNames.indexOf(currentCheckedDiff);
+        if(difPos < diffNames.length - 1) {
+            document.getElementById(currentCheckedDiff).checked = false;
+            document.getElementById(diffNames[difPos + 1]).checked = true;
+            Start();
+        }
+    }
+
+    
+
     lives.innerHTML = life;
+    
 }
 
 function GenerateRandomNumber(min, max) {
@@ -96,18 +145,19 @@ function GenerateRandomNumber(min, max) {
 
 function Start() {
     let difficulty = document.querySelector("input[name='difficulty']:checked").value;
+    diffName = difficulty;
     switch (difficulty) {
         case "easy":
-            genNum1 = GenerateRandomNumber(1, 11);
-            genNum2 = GenerateRandomNumber(1, 11);
+            genNum1 = GenerateRandomNumber(1, 2);
+            genNum2 = GenerateRandomNumber(1, 2);
             break;
         case "medium":
-            genNum1 = GenerateRandomNumber(1, 51);
-            genNum2 = GenerateRandomNumber(1, 51);
+            genNum1 = GenerateRandomNumber(1, 2);
+            genNum2 = GenerateRandomNumber(1, 2);
             break;
         case "hard":
-            genNum1 = GenerateRandomNumber(1, 1000001);
-            genNum2 = GenerateRandomNumber(1, 1000001);
+            genNum1 = GenerateRandomNumber(1, 2);
+            genNum2 = GenerateRandomNumber(1, 2);
             break;
         default:
             break;
