@@ -34,13 +34,18 @@
                 winner nullida
                 esimene uuesti siestada
                 aktiveerida nuppud
-            10. Eelmised tulemused salvestada
-            11. Mängida Arvuti vastu
+            10. Viik
+                Mängu laud on täis ja ei ole 3 järjest elementi
+            11. Eelmised tulemused salvestada
+                Võitja - kas X / O / viik
+                Mängulaud                
+            12. Mängida Arvuti vastu
+            13. Näitame eelmised mängud
 
 
         -->
 
-        <div class="container">
+        <div class="container" id="currentGame">
             <div class="row">
                 <div class="col-4 text-center boardPos"></div>
                 <div class="col-4 text-center middleSide boardPos"></div>
@@ -61,7 +66,7 @@
         <br>
         <div class="container">
             <div class="row">
-                <div class="col-4 text-center boardPos" style="cursor: default;">
+                <div class="col-4 text-center" style="cursor: default;">
                     <h2 id="gameStatusFull" style="display: none;" class="text-center"><span id="boardStatus"></span> is<br><span id="currentPlayer" style="font-size: 40px;"></span></h2>
                 </div>
             </div>
@@ -78,7 +83,39 @@
         </div>
         <button id="startGame" onclick="StartGame()" class="btn btn-primary" disabled>START</button>
         <button id="restartGame" onclick="RestartGame()" class="btn btn-warning" disabled>RESTART</button>
-        
+
+        <br>
+        <br>
+
+        <h2>Past Games</h2>
+
+
+        <div id="pastGames">
+
+        </div>
+
+        <!--<div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-4 text-center boardPos">X</div>
+                        <div class="col-4 text-center middleSide boardPos">X</div>
+                        <div class="col-4 text-center boardPos"></div>
+                    </div>
+                    <div class="row middle">
+                        <div class="col-4 text-center boardPos">X</div>
+                        <div class="col-4 text-center middleSide boardPos">X</div>
+                        <div class="col-4 text-center boardPos">O</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4 text-center boardPos winner">O</div>
+                        <div class="col-4 text-center middleSide boardPos winner">O</div>
+                        <div class="col-4 text-center boardPos winner">O</div>
+                    </div>
+                </div>
+              <p class="card-title">Winner : X</p>
+            </div>
+        </div>-->
 
 
 
