@@ -30,7 +30,7 @@
             End - move to end row
                 SHIF + End - selecet to end
             TAB - In windows selecet next. Add extra space to the left
-            SHIFT + TAB - In windows selecet prev. Remove spave from left
+            SHIFT + TAB - In windows selecet prev. Remove space from left
         -->
         <!-- Heading -->
         <!-- Only 1 H1 per page -->
@@ -80,13 +80,85 @@
             <li>Auto</li> 
             <li>Buss</li>
         </ul>
+
+        <!--
+            table
+            tr -> Table Row
+            td -> Table Data
+            th -> Table Heading
+        -->
+        <table>
+            <tr>
+                <th>Nimi</th>
+                <th>Linn</th>
+                <th>Sihtkoht</th>
+                <th>Buss nr</th>
+            </tr>
+            <tr>
+                <td>Dima</td>
+                <td>Tallinn</td>
+                <td>Tartu</td>
+                <td>55</td>
+            </tr>
+            <tr>
+                <td>Juku</td>
+                <td colspan="2">Tallinn</td>
+                <td>40</td>
+            </tr>
+            <tr>
+                <td>Mari</td>
+                <td>Tallinn</td>
+                <td>Pärnu</td>
+                <td>55</td>
+            </tr>
+            <tr>
+                <td>Jaanus</td>
+                <td rowspan="2">Vilnius</td>
+                <td rowspan="2">Tallinn</td>
+                <td rowspan="2">77</td>
+            </tr>
+            <tr>
+                <td>Tarmo</td>
+            </tr>
+            <tr>
+                <td>Mari2</td>
+                <td>Tallinn</td>
+                <td>Pärnu</td>
+                <td>55</td>
+            </tr>
+        </table>
+
+        <br><br><br><br><br>
+
         <!--
             img -> Image
             src -> where is the image located
+            TIPS - Images should be no more than 3-5MB
         -->
         <img src="./Space1.jpg">
-        <img src="../Lesson1/Space2.png">
-        <img src="https://www.coventry.ac.uk/globalassets/media/global/05-research-section-assets/news/2023/space-news-story-767x460.jpg">
+        <img width="200px" src="../Lesson1/Space2.png">
+        <img height="200px" src="./Images/Space3.jpeg">
+        <img height="400px" width="200px" src="https://www.coventry.ac.uk/globalassets/media/global/05-research-section-assets/news/2023/space-news-story-767x460.jpg">
         
+        <!--
+            iframe -> Add extra video/page to your site
+        -->
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/SKwOw1T715o?si=vZi4fDeUO9vpU3TF&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe width="500" height="500" src="https://theruledemon.github.io/Lesson2/"></iframe>
+
+        <!--
+            GET - Info is sent in URL
+            POST - Info sent in a body that is saved locally
+        -->
+        <form >
+            <label>Username:</label>
+            <input type="text"><br>
+            <label>Password</label>
+            <input type="password"><br>
+            <input type="submit">
+        </form>
+
+        <br><br><br><br><br><br>
+
     </body>
 </html>
