@@ -1,0 +1,318 @@
+/*
+ . - Class 
+ # - ID
+*/ 
+
+.container {
+    display: flex;
+    background-color: brown;
+    padding: 5px;
+}
+
+.container > div,
+.pageContainer > div,
+.gContainer > div {
+    width: 50px;
+    line-height: 30px;
+    background-color: grey;
+    font-size: 30px;
+    text-align: center;
+    padding: 5px;
+}
+
+.flexdir {
+    flex-direction: column;
+}
+
+.wrap {
+    flex-wrap: wrap;
+}
+
+.align {
+    height: 300px;
+    flex-wrap: wrap;
+}
+
+.alignItemCenter {
+    /* NB. if we use Align we need to set height*/
+    align-items: center;
+}
+
+.alignItemStart {
+    align-items: start;
+}
+
+.alignItemEnd {
+    align-items: end;
+}
+
+.alignContentCenter {
+    align-content: center;
+}
+
+.alignContentStart {
+    align-content: start;
+}
+
+.alignContentEnd {
+    align-content: end;
+}
+
+.alignContentSpaceBetween {
+    align-content: space-between;
+}
+
+.alignContentSpaceEvenly {
+    align-content: space-evenly;
+}
+
+.alignContentSpaceAround {
+    align-content: space-around;
+}
+
+.justify {
+    flex-wrap: wrap;
+}
+
+.justifyContentCenter {
+    justify-content: center;
+}
+
+.justifyContentStart {
+    justify-content: start;
+}
+
+.justifyContentEnd {
+    justify-content: end;
+}
+
+.justifyContentBetween {
+    justify-content: space-between;
+}
+
+.justifyContentAround {
+    justify-content: space-around;
+}
+
+.justifyContentEvenly {
+    justify-content: space-evenly;
+}
+
+.order1 > div:nth-child(1) {
+    order: 2;
+}
+
+.order1 > div:nth-child(2) {
+    order: 1;
+}
+
+.order1 > div:nth-child(3) {
+    order: 3;
+}
+
+.order1 > div:nth-child(4) {
+    order: 4;
+}
+
+.pageContainer {
+    display: flex;
+    flex-wrap: wrap;
+    /* gap: 20px 5px;*/
+    /*row-gap: 50px;
+    column-gap: 10px;*/
+    gap: 5px;
+}
+
+.pageContainer > div:first-child,
+.pageContainer > div:last-child{
+    width: 100%;
+}
+
+.pageContainer > div:nth-child(2) {
+    flex-grow: 4;
+}
+
+.pageContainer > div:nth-child(3) {
+    flex-grow: 1;
+}
+
+.grow > div {
+    border: 1px red solid;
+}
+
+.grow > div:nth-child(1) {
+    flex-grow: 5;  
+}
+
+.grow > div:nth-child(2) {
+    flex-grow: 1;  
+}
+
+.grow > div:nth-child(3) {
+    flex-grow: 1;  
+}
+
+.grow > div:nth-child(4) {
+    flex-grow: 1;  
+}
+
+.paraTest > span {
+    color: red;
+    font-weight: bold;
+}
+
+/* IF */
+@media screen and (max-width: 450px) {
+    .pageContainer {
+        flex-direction: column;
+    }
+
+    .pageContainer > div:nth-child(2), .pageContainer > div:nth-child(3) {
+        width: 100%;
+    }
+
+    .pageContainer > div:first {
+        order: 1;
+    }
+
+    .pageContainer > div:last-child {
+        order: 4;
+    }
+
+    .pageContainer > div:nth-child(2) {
+        order: 3;
+    }
+    
+    .pageContainer > div:nth-child(3) {
+        order: 2;
+    }
+}
+
+@media screen and (min-width: 500px) {
+    .paraTest > span:first-child {
+        color: green;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .paraTest > span:nth-child(2) {
+        font-size: 50px;
+    }
+
+    .paraTest > span:first-child {
+        color: rgb(0, 51, 255);
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .paraTest > span:first-child {
+        color: rgb(251, 255, 0);
+    }
+}
+
+.gContainer {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto auto;
+    background-color: brown;
+    padding: 5px;
+}
+.gAlignCenter {
+    height: 600px;
+    align-content: center;
+}
+
+.gJustifyCenter {
+    height: 600px;
+    justify-content: center;
+    align-content: center;
+}
+
+.gContainer2 > div {
+    line-height: 30px;
+    background-color: grey;
+    font-size: 30px;
+    text-align: center;
+    padding: 5px;
+}
+
+.gContainer2 {
+    display: grid;
+    background-color: brown;
+    padding: 5px;
+    grid-template-columns: 30% 10% 30% auto 10%;
+    grid-template-rows: 100px auto 300px auto;
+    gap: 2px;
+}
+
+.gContainer2 > div:nth-child(1) {
+    grid-column: 1 / 6;
+}
+
+.gContainer2 > div:nth-child(2) {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+}
+
+.gContainer2 > div:nth-child(3) {
+    grid-column: 2 / 3;
+    grid-row: 2 / 4;
+}
+
+.gContainer2 > div:nth-child(4) {
+    grid-column: 3 / 4;
+    grid-row: 2 / 3;
+}
+
+.gContainer2 > div:nth-child(5) {
+    grid-column: 4 / 5;
+    grid-row: 2 / 3;
+}
+
+.gContainer2 > div:nth-child(6) {
+    grid-column: 5 / 6;
+    grid-row: 2 / 3;
+}
+
+.gContainer2 > div:nth-child(7) {
+    grid-column: 1 / 2;
+    grid-row: 3 / 5;
+}
+
+.gContainer2 > div:nth-child(8) {
+    grid-column: 3 / 5;
+    grid-row: 3 / 4;
+}
+
+.gContainer2 > div:nth-child(9) {
+    grid-column: 5 / 6;
+    grid-row: 3 / 5;
+}
+
+.gContainer2 > div:nth-child(10) {
+    grid-column: 2 / 4;
+    grid-row: 4 / 5;
+}
+
+.gContainer2 > div:nth-child(11) {
+    grid-column: 4 / 5;
+    grid-row: 4 / 5;
+}
+
+@media screen and (max-width: 450px) {
+
+    .gContainer2 > div:nth-child(11) {
+        grid-column: 3 / 4;
+        grid-row: 2 / 3;
+    }
+
+    .gContainer2 > div:nth-child(4) {
+        grid-column: 2 / 4;
+        grid-row: 4 / 5;
+    }
+    
+    .gContainer2 > div:nth-child(10) {
+        grid-column: 4 / 5;
+        grid-row: 4 / 5;
+    }
+}

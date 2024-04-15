@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Flexbox</title>
-        <link rel="stylesheet" href="./styles.css">
+        <title>Lesson4</title>
+        <link rel="stylesheet" href="./styles/style.css">
     </head>
     <body>
-        <h1>Flexbox</h1>
-        <h2>Tavaline DIV</h2>
+        <h1>FLEX</h1>
+        <h2>Regular DIV</h2>
         <div>1</div>
         <div>2</div>
         <div>3</div>
         <div>4</div>
         <div>5</div>
-        <h2>Flexbox kasutamine</h2>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+
+        <h2>Standalone FLEX</h2>
         <div class="container">
             <div>1</div>
             <div>2</div>
@@ -22,12 +26,10 @@
             <div>6</div>
             <div>7</div>
             <div>8</div>
-            <div>9</div>
-            <div>10</div>
-            <div>11</div>
         </div>
-        <h2>Flexbox Wrap</h2>
-        <div class="container contwrap">
+
+        <h2>FLEX direction</h2>
+        <div class="container flexdir">
             <div>1</div>
             <div>2</div>
             <div>3</div>
@@ -36,12 +38,10 @@
             <div>6</div>
             <div>7</div>
             <div>8</div>
-            <div>9</div>
-            <div>10</div>
-            <div>11</div>
         </div>
-        <h2>Flexbox column</h2>
-        <div class="container contdir">
+
+        <h2>FLEX Wrap</h2>
+        <div class="container wrap">
             <div>1</div>
             <div>2</div>
             <div>3</div>
@@ -50,12 +50,10 @@
             <div>6</div>
             <div>7</div>
             <div>8</div>
-            <div>9</div>
-            <div>10</div>
-            <div>11</div>
         </div>
-        <h2>Flexbox reverse</h2>
-        <div class="container contdir3">
+
+        <h2>FLEX Align Item Center</h2>
+        <div class="container align alignItemCenter">
             <div>1</div>
             <div>2</div>
             <div>3</div>
@@ -64,189 +62,278 @@
             <div>6</div>
             <div>7</div>
             <div>8</div>
-            <div>9</div>
-            <div>10</div>
-            <div>11</div>
-        </div>
-        <h2>Flexbox reverse2</h2>
-        <div class="container contdir4">
-            <div>1</div>
-            <div>2</div>
-            <div>3</div>
-            <div>4</div>
-            <div>5</div>
-            <div>6</div>
-            <div>7</div>
-            <div>8</div>
-            <div>9</div>
-            <div>10</div>
-            <div>11</div>
-        </div>
-        <h2>Flexbox justify Center</h2>
-        <div class="container contjust">
-            <div>1</div>
-            <div>2</div>
-            <div>3</div>
-            <div>4</div>
-            <div>5</div>
-            <div>6</div>
-            <div>7</div>
-            <div>8</div>
-            <div>9</div>
-            <div>10</div>
-            <div>11</div>
-        </div>
-        <h2>Flexbox justify space-around</h2>
-        <div class="container contjust2">
-            <div>1</div>
-            <div>2</div>
-            <div>3</div>
-            <div>4</div>
-            <div>5</div>
-        </div>
-        <h2>Flexbox justify space-between</h2>
-        <div class="container contjust3">
-            <div>1</div>
-            <div>2</div>
-            <div>3</div>
-            <div>4</div>
-            <div>5</div>
-        </div>
-        <h2>Flexbox justify space-between</h2>
-        <div class="container contjust4">
-            <div>1</div>
-            <div>2</div>
-            <div>3</div>
-            <div>4</div>
-            <div>5</div>
-        </div>
-        <h2>Flexbox justify start</h2>
-        <div class="container contjust5">
-            <div>1</div>
-            <div>2</div>
-            <div>3</div>
-            <div>4</div>
-            <div>5</div>
-        </div>
-        <h2>Flexbox justify end</h2>
-        <div class="container contjust6">
-            <div>1</div>
-            <div>2</div>
-            <div>3</div>
-            <div>4</div>
-            <div>5</div>
-        </div>
-        <h2>Flexbox align center</h2>
-        <div class="container contcent1">
-            <div>1</div>
-            <div>2</div>
-            <div>3</div>
-            <div>4</div>
-            <div>5</div>
-        </div>
-        <h2>Flexbox align center + justify center</h2>
-        <div class="container contcent2">
-            <div>1</div>
-            <div>2</div>
-            <div>3</div>
-            <div>4</div>
-            <div>5</div>
-        </div>
-        <h2>Flexbox align start</h2>
-        <div class="container contcent3">
-            <div>1</div>
-            <div>2</div>
-            <div>3</div>
-            <div>4</div>
-            <div>5</div>
-        </div>
-        <h2>Flexbox align end</h2>
-        <div class="container contcent4">
-            <div>1</div>
-            <div>2</div>
-            <div>3</div>
-            <div>4</div>
-            <div>5</div>
-        </div>
-        <h2>Flexbox order</h2>
-        <div class="container contord">
-            <div>1</div>
-            <div>2</div>
-            <div>3</div>
-            <div>4</div>
-            <div>5</div>
-        </div>
-        <h2>Ise muudame asukoha</h2>
-        <div class="desktop">
-            <div class="custom">1</div>
-            <div class="custom">2</div>
-            <div class="custom">3</div>
-            <div class="custom">4</div>
-            <div class="custom">5</div>
-        </div>
-        <div class="mobile">
-            <div class="custom">2</div>
-            <div class="custom">1</div>
-            <div class="custom">5</div>
-            <div class="custom">4</div>
-            <div class="custom">3</div>
-        </div>
-        <h2>Flexbox Grow</h2>
-        <div class="container contgrow">
-            <div>1</div>
-            <div>2</div>
-            <div>3</div>
-            <div>4</div>
-            <div>5</div>
-        </div>
-        <h2>Flexbox Basis</h2>
-        <div class="container contbasis">
-            <div>1</div>
-            <div>2</div>
-            <div>3</div>
-            <div>4</div>
-            <div>5</div>
-        </div>
-        <h2>Flexbox Self items</h2>
-        <div class="container contself">
-            <div>1</div>
-            <div>2</div>
-            <div>3</div>
-            <div>4</div>
-            <div>5</div>
-        </div>
-        <div class="mainCont">
-            <div class="header">
-                <h2>Minu esimene ilus FLEX</h2>
-            </div>
-            <div class="menu">
-                <ol style="list-style-type: none;">
-                    <li>Menu 1</li>
-                    <li>Menu 2</li>
-                    <li>Menu 3</li>
-                    <li>Menu 4</li>
-                    <li>Menu 5</li>
-                </ol>
-            </div>
-            <div class="content">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate reiciendis vero dicta fuga perspiciatis commodi animi sed, recusandae, impedit voluptas tenetur aliquid consequatur sapiente voluptatibus culpa. Optio perferendis maiores quae ipsum natus doloribus veniam officiis unde cupiditate eaque? Magnam, esse!</p>
-            </div>
-            <div class="footer">
-                <p>Copyright 2024</p>
-            </div>
         </div>
         
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
+        <h2>FLEX Align Item Start</h2>
+        <div class="container align alignItemStart">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+        </div>
+
+        <h2>FLEX Align Item End</h2>
+        <div class="container align alignItemEnd">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+        </div>
+
+        <h2>FLEX Align Content Center</h2>
+        <div class="container align alignContentCenter">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+        </div>
+
+        <h2>FLEX Align Content Start</h2>
+        <div class="container align alignContentStart">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+        </div>
+
+        <h2>FLEX Align Content End</h2>
+        <div class="container align alignContentEnd">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+        </div>
+
+        <h2>FLEX Align Content Space Between</h2>
+        <div class="container align alignContentSpaceBetween">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+        </div>
+
+        <h2>FLEX Align Content Space Evenly</h2>
+        <div class="container align alignContentSpaceEvenly">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+        </div>
+
+        <h2>FLEX Align Content Space Around</h2>
+        <div class="container align alignContentSpaceAround">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+        </div>
+
+        <h2>FLEX Fistify Content Center</h2>
+        <div class="container justify justifyContentCenter">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+        </div>
+
+        <h2>FLEX Fistify Content Start</h2>
+        <div class="container justify justifyContentStart">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+        </div>
+
+        <h2>FLEX Fistify Content End</h2>
+        <div class="container justify justifyContentEnd">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+        </div>
+
+        <h2>FLEX Fistify Content Between</h2>
+        <div class="container justify justifyContentBetween">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+        </div>
+
+        <h2>FLEX Fistify Content Around</h2>
+        <div class="container justify justifyContentAround">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+        </div>
+
+        <h2>FLEX Fistify Content Evenly</h2>
+        <div class="container justify justifyContentEvenly">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+        </div>
+
+        <h2>FLEX Full Center</h2>
+        <div class="container align alignContentCenter justifyContentCenter">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+        </div>
+
+        <h2>FLEX extra 1</h2>
+        <div class="container align">
+            <div>1</div>
+            <div style="align-self: start;">2</div>
+            <div style="align-self: center;">3</div>
+            <div style="align-self: end;">4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+        </div>
+
+        <h2>FLEX Order</h2>
+        <div class="container justify order1">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+        </div>
+
+        <h2>FLEX Grow</h2>
+        <div class="container justify grow">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+        </div>
+
+        <h2>Standart Page</h2>
+        <div class="pageContainer">
+            <div>H</div>
+            <div>C</div>
+            <div>S</div>
+            <div>F</div>
+        </div>
+
+        <p class="paraTest">Lorem, <span>ipsum</span> <span>dolor</span> sit amet consectetur adipisicing <span>elit. Quaerat</span>, itaque.</p>
+
+
+        <h2>GRID</h2>
+        <div class="gContainer">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+        </div>
+
+        <h2>GRID Align</h2>
+        <div class="gContainer align gAlignCenter">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+        </div>
+
+        <h2>GRID Justify</h2>
+        <div class="gContainer align gJustifyCenter">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+        </div>
+
+        <h2>Complex Page</h2>
+        <div class="gContainer2">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div>10</div>
+            <div>11</div>
+        </div>
+
         <br>
         <br>
         <br>
