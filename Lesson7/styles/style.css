@@ -1,0 +1,9 @@
+.correct,
+.correct:disabled  {
+    background-color: green;
+}
+
+.wrong,
+.wrong:disabled {
+    background-color: red;
+}
