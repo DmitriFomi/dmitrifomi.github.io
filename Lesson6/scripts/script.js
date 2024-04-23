@@ -282,4 +282,159 @@ while(true) {
     Teha FOR ning tuua välja kõik ühel real kasutades console.log()
     Lisa kui on aega
         Kuvada ainult need mis ei ole ostetud
+    cars[i].isBought == false -> !carsObj[i].isBought
 */
+
+let carsObj = [
+    {
+      "brand": "Toyota",
+      "color": "Red",
+      "year": 2020,
+      "price": 25000,
+      "isBought": true
+    },
+    {
+      "brand": "Honda",
+      "color": "Blue",
+      "year": 2019,
+      "price": 22000,
+      "isBought": false
+    },
+    {
+      "brand": "Ford",
+      "color": "Black",
+      "year": 2018,
+      "price": 20000,
+      "isBought": true
+    },
+    {
+      "brand": "Chevrolet",
+      "color": "Silver",
+      "year": 2021,
+      "price": 28000,
+      "isBought": false
+    },
+    {
+      "brand": "BMW",
+      "color": "White",
+      "year": 2022,
+      "price": 35000,
+      "isBought": true
+    }
+  ];
+  for (let i = 0; i < carsObj.length; i++) {
+    console.log(`Brand: ${carsObj[i].brand}, Color: ${carsObj[i].color}`);
+    console.log("Brand: " + carsObj[i].brand + ", Color: " + carsObj[i].color);
+    /*if (!carsObj[i].isBought) {
+      console.log("Brand:" + carsObj[i].brand);
+      console.log("Color:", carsObj[i].color);
+      console.log("Year:", carsObj[i].year);
+      console.log("Price:", carsObj[i].price);
+      console.log("-------------------------");
+    }*/
+    console.log("-------------------------");
+  }
+
+console.log("++++++++++++++++++++");
+let autod = []; 
+        
+
+let autoBmw = {
+       "Mark": "BMW",
+       "Aasta" : 2005,
+       "Hind": "3500€",
+       "Värv": "Must",
+       "Saadavus": true,
+   };
+
+let autoAudi = {
+       "Mark": "Audi",
+       "Aasta" : 2018,
+       "Hind": "10000€",
+       "Värv": "Must",
+       "Saadavus": false,
+   };
+
+let autoToyota = {
+       "Mark": "Toyota",
+       "Aasta" : 2021,
+       "Hind": "25000€",
+       "Värv": "Valge",
+       "Saadavus": true,
+   };
+
+let autoFord = {
+       "Mark": "Ford",
+       "Aasta" : 2019,
+       "Hind": "15550€",
+       "Värv": "Hall",
+       "Saadavus": true,
+   };
+
+let autoCitroen = {
+       "Mark": "Citroen",
+       "Aasta" : 2018,
+       "Hind": "25000€",
+       "Värv": "Hall",
+       "Saadavus": false,
+   };
+
+let autoKia = {
+       "Mark": "Kia",
+       "Aasta" : 2018,
+       "Hind": "17500€",
+       "Värv": "Punane",
+       "Saadavus": true,
+   };
+
+let autoSubaru = {
+       "Mark": "Subaru",
+       "Aasta" : 2010,
+       "Hind": "10000€",
+       "Värv": "Roheline",
+       "Saadavus": true,
+   };
+
+let autoNissan = {
+       "Mark": "Nissan",
+       "Aasta" : 2003,
+       "Hind": "2500€",
+       "Värv": "Kollane",
+       "Saadavus": false,
+   };
+
+
+
+  autod.push(autoBmw, autoAudi, autoToyota, autoKia, autoSubaru, autoFord, autoNissan, autoSubaru);
+
+autod.forEach(function(autod) {
+    /*if(autod.Saadavus) {
+        console.log("Mark: " + autod.Mark);
+        console.log("Aasta: " + autod.Aasta);
+        console.log("Hind: €" + autod.Hind);
+        console.log("Värv: " + autod.Värv);
+        console.log("Saadavus: Jah\n");
+    }
+    else {
+        console.log("Mark: " + autod.Mark);
+        console.log("Aasta: " + autod.Aasta);
+        console.log("Hind: €" + autod.Hind);
+        console.log("Värv: " + autod.Värv);
+        console.log("Saadavus: Ei\n");
+    }*/
+    console.log("Mark: " + autod.Mark);
+    console.log("Aasta: " + autod.Aasta);
+    console.log("Hind: €" + autod.Hind);
+    console.log("Värv: " + autod.Värv);
+    console.log("Saadavus: " + (autod.Saadavus ? "Jah" : "Ei"));
+    /*
+        if(true) {
+            ...
+        } else {
+            ....
+        }
+
+        ifloogika ? "IF TRUE" : "IF FALSE"
+    */
+    console.log("------------------");
+} );
