@@ -1,0 +1,51 @@
+.containerTicTacToe {
+    font-size: 50px;
+    width: 225px;
+    margin-top: 20px;
+}
+
+.tictactoegrid,
+.tictactoegridLeader {
+    height: 75px;
+    align-content: center;
+    cursor: pointer;
+}
+
+.tictactoegridLeader {
+    cursor: default;
+}
+
+#pastGames {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 300px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.tictactoerow:nth-child(1) >.tictactoegrid:nth-child(2),
+.tictactoerow:nth-child(2) >.tictactoegrid:nth-child(2),
+.tictactoerow:nth-child(3) >.tictactoegrid:nth-child(2),
+.tictactoerow:nth-child(1) >.tictactoegridLeader:nth-child(2),
+.tictactoerow:nth-child(2) >.tictactoegridLeader:nth-child(2),
+.tictactoerow:nth-child(3) >.tictactoegridLeader:nth-child(2) {
+    border-left: 3px solid black;
+    border-right: 3px solid black;
+}
+
+.tictactoerow:nth-child(2) > .tictactoegrid,
+.tictactoerow:nth-child(2) > .tictactoegridLeader{
+    border-top: 3px solid black;
+    border-bottom: 3px solid black;
+}
+
+.winner {
+    background-color: rgba(0, 128, 0, 0.462);
+}
+
+.tie {
+    background-color: rgba(255, 255, 0, 0.383);
+}
