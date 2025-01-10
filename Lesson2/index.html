@@ -2,6 +2,7 @@
 <html>
     <head>
         <title>Lesson 2</title>
+        <meta charset="UTF-8">
     </head>
     <body>
         <!-- Comments, kasutan täpi täheäd -->
@@ -15,6 +16,7 @@
             Mouse 1x Click - Select
             Mouse 2x Click - Select word
             Mouse 3x Click - Select row
+            Mopuse Middle Click - Open link in new tab
             Home - Go to row start
             End - Go to row end
             Home / End + Shift - Same as select row
@@ -22,7 +24,8 @@
             Shift + Tab - Remove space from left
         -->
         <!-- Clean Code -->
-         <!-- Heading -->
+        <!-- Heading -->
+         
         <h1>Lesson 2</h1> <!-- use once h1 -->
         <h2>Lesson 2</h2>
         <h3>Lesson 2</h3>
@@ -38,5 +41,72 @@
         </p>
         <p>Teine rida.</p>
         <p>Siin veel üks rida.</p>
+
+        <!-- Active Link -->
+        <a target="_blank" href="https://www.google.com/">Here is a link to Google</a>
+        <br>
+        <!--
+            . -> Same folder
+            .. -> 1 folder before
+        -->
+        <a href="../Lesson1/index.html">Lesson 1 Link</a>
+
+        <!-- Ordered List -->
+        <ol>
+            <li>Auto</li> <!-- List item -->
+            <li>Buss</li>
+            <li>Lennuk</li>
+            <li>Laev</li>
+        </ol>
+
+        <!-- Unorder List -->
+        <ul>
+            <li>Auto</li>
+            <li>Buss</li>
+            <li>Lennuk</li>
+            <li>Laev</li>
+        </ul>
+
+        <!-- Table -->
+        <table>
+            <tbody>
+                <tr>
+                    <th>Name</th> <!-- Table heading -->
+                    <th>Age</th>
+                    <th>City</th>
+                    <th>School</th>
+                    <th>Time</th>
+                </tr>
+                <tr>
+                    <td>Dima</td> <!-- Table data -->
+                    <td>29</td>
+                    <td colspan="2">Tallinn</td>
+                    <td>19:37</td>
+                </tr>
+                <tr>
+                    <td rowspan="2">Dima</td>
+                    <td rowspan="2">29</td>
+                    <td rowspan="2">Tallinn</td>
+                    <td>Nort</td>
+                    <td>19:40</td>
+                </tr>
+                <tr>
+                    <td>TTÜ</td>
+                    <td>19:41</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Image -->
+        <img width="200px" height="100px" src="./Space1.jpg">
+
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/lQN1TLws1vM?si=5_p17MGSOIGjWIRB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe src="../Lesson1/index.html"></iframe>
+
+        <br>
+        <br>
+        <br>
+        <a href="https://www.w3schools.com/html/default.asp">Materials</a>
+        
     </body>
 </html>
