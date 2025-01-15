@@ -1,0 +1,24 @@
+/*
+    Comments
+    element {
+        attribute: value;
+        attribute: value;
+        attribute: value;
+        attribute: value;
+        attribute: value;
+        attribute: value;
+    }
+*/
+
+h1 {
+    color: red;
+}
+
+p {
+    font-size: 20px;
+}
+
+#custom-para {
+    font-size: 12px;
+    color: blue;
+}
