@@ -11,26 +11,26 @@
     <body>
       <div class="container">
         <div class="row">
-          <div class="col-4"></div>
-          <div class="col-4"></div>
-          <div class="col-4"></div>
+          <div class="col-4 position" onclick="MakeMove(0)"></div>
+          <div class="col-4 position" onclick="MakeMove(1)"></div>
+          <div class="col-4 position" onclick="MakeMove(2)"></div>
         </div>
         <div class="row">
-          <div class="col-4"></div>
-          <div class="col-4"></div>
-          <div class="col-4"></div>
+          <div class="col-4 position" onclick="MakeMove(3)"></div>
+          <div class="col-4 position" onclick="MakeMove(4)"></div>
+          <div class="col-4 position" onclick="MakeMove(5)"></div>
         </div>
         <div class="row">
-          <div class="col-4"></div>
-          <div class="col-4"></div>
-          <div class="col-4"></div>
+          <div class="col-4 position" onclick="MakeMove(6)"></div>
+          <div class="col-4 position" onclick="MakeMove(7)"></div>
+          <div class="col-4 position" onclick="MakeMove(8)"></div>
         </div>
       </div>
       <div class="container">
         <div class="row">
           <div class="col-5">
             <label for="player1" class="form-label">Player 1</label>
-            <select id="player1" class="form-select" aria-label="Default select example">
+            <select onchange="Player1Changed()" id="player1" class="form-select" aria-label="Default select example">
               <option selected value="X">X</option>
               <option value="O">O</option>
             </select>
@@ -42,8 +42,10 @@
               <option selected value="O">O</option>
             </select>
           </div>
+          <div class="col-2" style="border: 0px; align-self: end;">
+            <button id="playButton" onclick="StartGame()" class="btn btn-primary">PLAY</button>
+          </div>
         </div>
       </div>
-      
     </body>
 </html>
