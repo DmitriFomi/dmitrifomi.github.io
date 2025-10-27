@@ -33,3 +33,26 @@
 .col-6 {
     text-align: center;
 }
+
+.centerText {
+    justify-self: center;
+}
+
+p.centerText {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.historyCard {
+    width: 18rem;
+}
+
+.containerFlex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.containerFlex > div {
+    width: 31%;
+    margin: 10px;
+}

@@ -5,6 +5,8 @@ let playing = false;
 let winnerText = null;
 let playerX = "";
 let playerO = "";
+let history = [];
+let conter = 0;
 
 $(document).ready(function() {
     boardElements = document.getElementsByClassName("board");
@@ -20,15 +22,19 @@ function MakeMove(pos) {
                     MarkWinners(winnerOutcome);
                     winner = true;
                     if(winnerOutcome.Winner) {
-                        winnerText.innerHTML = "Winner is " + player;
+                        winnerText.innerHTML = "Winner is " + (player == "X" ? playerX : playerO);
                     } else {
                         winnerText.innerHTML = "TIE";
                     }
+                    SaveGame();
                 } else {
                     if(player == "X") {
                         player = "O";
                     } else {
                         player = "X";
+                    }
+                    if(player == "X" && playerX == "AI" || player == "O" && playerO == "AI") {
+                        AIMove();
                     }
                 }
             }
@@ -106,7 +112,7 @@ function CheckWinner() {
                 break;
             }
         }
-        if(tie) {
+        if(tie && boardElements[0].innerHTML.length != 0) {
             output = {
                 "Winner": false,
                 "WinnerPos": []
@@ -140,8 +146,9 @@ function StartGame() {
     document.getElementById("playerX").disabled = true;
     document.getElementById("playerO").disabled = true;
 
-    console.log(playerX);
-    console.log(playerO);
+    if(playerX == "AI") {
+        AIMove();
+    }
 }
 
 function RestartGame() {
@@ -152,6 +159,10 @@ function RestartGame() {
     winnerText.innerHTML = "";
     player = "X";
     winner = false;
+
+    if(playerX == "AI") {
+        AIMove();
+    }
 }
 
 function PlayerNameChanged() {
@@ -163,4 +174,164 @@ function PlayerNameChanged() {
     console.log(players);*/
 
     document.getElementById("startGame").disabled = !(document.getElementById("playerX").value.length != 0 && document.getElementById("playerO").value.length != 0);
+}
+
+function AIMove() {
+    let min = 0;
+    let max = 9;
+    let move = -1;
+
+    if(move == -1) {
+        // When AI Wins
+        for(let i = 0; i < boardElements.length; i++) {
+            if(boardElements[i].innerHTML == 0) {
+                boardElements[i].innerHTML = player;
+                let tmpWinner = CheckWinner();
+                boardElements[i].innerHTML = "";
+                if(tmpWinner != null) {
+                    move = i;
+                    break;
+                }
+            }
+        }
+    }
+
+    if(move == -1) {
+        // When AI Loses
+        for(let i = 0; i < boardElements.length; i++) {
+            let humanPlayer = playerX == "AI" ? "O" : "X";
+            if(boardElements[i].innerHTML == 0) {
+                boardElements[i].innerHTML = humanPlayer;
+                let tmpWinner = CheckWinner();
+                boardElements[i].innerHTML = "";
+                if(tmpWinner != null) {
+                    move = i;
+                    break;
+                }
+            }
+        }
+    }
+
+
+    if(move == -1) {
+        // Random Move
+        move = Math.floor(Math.random() * max) + min;
+        while(true) {
+            if(boardElements[move].innerHTML.length == 0) {
+                break;
+            }
+            move = Math.floor(Math.random() * max) + min;
+        }
+    }
+
+    MakeMove(move);
+}
+
+function SaveGame() {
+    let winnerOutcome = CheckWinner();
+    let gameBoardHistory = [];
+    let winnerName = winnerText.innerHTML ;
+    let historyContainer = document.getElementById("history");
+
+    for(let i = 0; i < boardElements.length; i++) {
+        gameBoardHistory.push(boardElements[i].innerHTML);
+    }
+
+    history.push({
+        "GameBoard": gameBoardHistory,
+        "Winner": winnerName,
+        "WinnerPos": winnerOutcome.WinnerPos
+    });
+
+    let lastHistory = history[history.length - 1];
+
+    let card = document.createElement("div");
+    card.classList.add("card");
+    card.classList.add("historyCard");
+
+    let cont = document.createElement("div");
+    let cardBody = document.createElement("div");
+
+    cont.classList.add("container");
+    let divRow = null;
+    for(let i = 0; i < lastHistory.GameBoard.length; i++) {
+        if(i % 3 == 0) {
+            divRow = document.createElement("div");
+            divRow.classList.add("row");
+            cont.appendChild(divRow);
+        }
+        if(i == 3) {
+            divRow.classList.add("midBoardRow");
+        }
+        let boardDiv = document.createElement("div");
+        boardDiv.classList.add("col-4");
+        if(i % 3 == 1) {
+            boardDiv.classList.add("midBoardCol");
+        }
+        boardDiv.innerHTML = lastHistory.GameBoard[i];
+        if(lastHistory.WinnerPos.includes(i)) {
+            boardDiv.classList.add("winner");
+        }
+
+        divRow.appendChild(boardDiv);
+    }
+
+
+    cardBody.classList.add("card-body");
+
+    let cardText = document.createElement("p");
+    cardText.innerHTML = lastHistory.Winner;
+    cardText.classList.add("centerText");
+    cardText.classList.add("card-text");
+
+    let replayButton = document.createElement("button");
+    replayButton.classList.add("btn");
+    replayButton.classList.add("btn-primary");
+    replayButton.innerHTML = "Replay";
+
+    card.appendChild(cont);
+    cardBody.append(cardText);
+    card.appendChild(cardBody);
+    card.append(replayButton);
+    historyContainer.appendChild(card);
+
+    cont.setAttribute("id", "gameboard-" + conter);
+    replayButton.onclick = function() { Replay(0); };
+
+
+    /*
+        <div class="card historyCard">
+                
+            <div class="container">
+                <div class="row">
+                    <div class="board col-4">O</div>                        0
+                    <div class="board col-4 midBoardCol winner">X</div>     1
+                    <div class="board col-4">O</div>                        2
+                </div>
+                <div class="row midBoardRow">
+                    <div class="board col-4"></div>                         3
+                    <div class="board col-4 midBoardCol winner">X</div>     4
+                    <div class="board col-4"></div>                         5
+                </div>
+                <div class="row">
+                    <div class="board col-4"></div>                         6
+                    <div class="board col-4 midBoardCol winner">X</div>     7
+                    <div class="board col-4"></div>                         8
+                </div>
+            </div>
+
+            <div class="card-body">
+                <p class="card-text centerText">Winner is AI</p>
+            </div>
+
+            <button class="btn btn-primary replaybtn">Replay</button>
+
+        </div>
+    */
+
+    console.log(history);
+}
+
+function Replay(boardPos) {
+    console.log("Replay Board: " + boardPos);
 }
