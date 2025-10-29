@@ -6,17 +6,26 @@ let winnerText = null;
 let playerX = "";
 let playerO = "";
 let history = [];
-let conter = 0;
+let counter = 0;
+let allMove = [];
+let today = new Date().toLocaleDateString("et-ET");
 
 $(document).ready(function() {
     boardElements = document.getElementsByClassName("board");
     winnerText = document.getElementById("winnerText");
+
+    if(localStorage["History"] != undefined) {
+        history = JSON.parse(localStorage["History"]);
+    }
+    ShowCookieHistory();
+
 });
 
 function MakeMove(pos) {
     if(!winner && playing) {
             if(boardElements[pos].innerHTML.length == 0) {
                 boardElements[pos].innerHTML = player;
+                SaveCurrentMove();
                 let winnerOutcome = CheckWinner();
                 if(winnerOutcome != null) {
                     MarkWinners(winnerOutcome);
@@ -39,6 +48,14 @@ function MakeMove(pos) {
                 }
             }
     }
+}
+
+function SaveCurrentMove() {
+    let currentBoard = [];
+    for(let i = 0; i < boardElements.length; i++) {
+        currentBoard.push(boardElements[i].innerHTML);
+    }
+    allMove.push(currentBoard);
 }
 
 function CheckWinner() {
@@ -159,6 +176,7 @@ function RestartGame() {
     winnerText.innerHTML = "";
     player = "X";
     winner = false;
+    allMove = [];
 
     if(playerX == "AI") {
         AIMove();
@@ -199,7 +217,7 @@ function AIMove() {
     if(move == -1) {
         // When AI Loses
         for(let i = 0; i < boardElements.length; i++) {
-            let humanPlayer = playerX == "AI" ? "O" : "X";
+            let humanPlayer = player == "X" ? "O" : "X";
             if(boardElements[i].innerHTML == 0) {
                 boardElements[i].innerHTML = humanPlayer;
                 let tmpWinner = CheckWinner();
@@ -227,6 +245,137 @@ function AIMove() {
     MakeMove(move);
 }
 
+function CreateAccordion(uniqueDates) {
+    let accGistory = document.getElementById("historyAcc");
+    /*
+        <div class="accordion" id="historyAcc">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#day1" aria-expanded="true" aria-controls="collapseOne">
+                        29.10.2025
+                    </button>
+                </h2>
+                <div id="day1" class="accordion-collapse collapse show" data-bs-parent="#historyAcc">
+                    <div class="accordion-body">
+                        <div class="containerFlex" id="history1">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    */
+    for(let i = 0; i < uniqueDates.length; i++) {
+
+        let accordionItem = document.createElement("div");
+        let accordionHeader = document.createElement("h2");
+        let accordionButton = document.createElement("button");
+        let accordionCollapse = document.createElement("div");
+        let accordionBody = document.createElement("div");
+        let history = document.createElement("div");
+
+        let accordionID = "day" + i;
+
+        accordionItem.classList.add("accordion-item");
+        accordionHeader.classList.add("accordion-header");
+        accordionButton.classList.add("accordion-button");
+        accordionCollapse.classList.add("collapse");
+        accordionCollapse.classList.add("accordion-collapse");
+        accordionBody.classList.add("accordion-body");
+        history.classList.add("containerFlex");
+
+
+        accGistory.appendChild(accordionItem);
+        accordionItem.appendChild(accordionHeader);
+        accordionItem.appendChild(accordionCollapse);
+        accordionHeader.appendChild(accordionButton);
+        accordionCollapse.appendChild(accordionBody);
+        accordionBody.appendChild(history);
+
+        accordionButton.innerHTML = uniqueDates[i];
+        accordionButton.setAttribute("type", "button");
+        accordionButton.setAttribute("data-bs-toggle", "collapse");
+        accordionButton.setAttribute("data-bs-target", "#" + accordionID); // Dynamic Value
+        accordionButton.setAttribute("aria-expanded", "false");
+        
+        accordionCollapse.setAttribute("id", accordionID); // Dynamic Value Same as in row 296
+        accordionCollapse.setAttribute("data-bs-parent", "#historyAcc");
+
+        history.setAttribute("id", "history1");  // Dynamic Value
+        history.innerHTML = "TO-DO";
+    }
+
+}
+
+function ShowCookieHistory() {
+    let historyContainer = document.getElementById("history");
+
+    let dates = history.map((item) => {
+        return item.Date
+    });
+    let uniqueDates = [...new Set(dates)];
+
+    CreateAccordion(uniqueDates);
+
+    for(let i = 0; i < history.length; i++) {
+        let lastHistory = history[i];
+
+        let card = document.createElement("div");
+        card.classList.add("card");
+        card.classList.add("historyCard");
+
+        let cont = document.createElement("div");
+        let cardBody = document.createElement("div");
+
+        cont.classList.add("container");
+        let divRow = null;
+        for(let i = 0; i < lastHistory.GameBoard.length; i++) {
+            if(i % 3 == 0) {
+                divRow = document.createElement("div");
+                divRow.classList.add("row");
+                cont.appendChild(divRow);
+            }
+            if(i == 3) {
+                divRow.classList.add("midBoardRow");
+            }
+            let boardDiv = document.createElement("div");
+            boardDiv.classList.add("col-4");
+            boardDiv.classList.add("gameboard-" + counter);
+            if(i % 3 == 1) {
+                boardDiv.classList.add("midBoardCol");
+            }
+            boardDiv.innerHTML = lastHistory.GameBoard[i];
+            if(lastHistory.WinnerPos.includes(i)) {
+                boardDiv.classList.add("winner");
+            }
+
+            divRow.appendChild(boardDiv);
+        }
+
+
+        cardBody.classList.add("card-body");
+
+        let cardText = document.createElement("p");
+        cardText.innerHTML = lastHistory.Winner;
+        cardText.classList.add("centerText");
+        cardText.classList.add("card-text");
+
+        let replayButton = document.createElement("button");
+        replayButton.classList.add("btn");
+        replayButton.classList.add("btn-primary");
+        replayButton.innerHTML = "Replay";
+
+        card.appendChild(cont);
+        cardBody.append(cardText);
+        card.appendChild(cardBody);
+        card.append(replayButton);
+        historyContainer.appendChild(card);
+
+        let currentCounter = counter++;
+        replayButton.onclick = function() { Replay(currentCounter); };
+    }
+}
+
 function SaveGame() {
     let winnerOutcome = CheckWinner();
     let gameBoardHistory = [];
@@ -240,7 +389,10 @@ function SaveGame() {
     history.push({
         "GameBoard": gameBoardHistory,
         "Winner": winnerName,
-        "WinnerPos": winnerOutcome.WinnerPos
+        "WinnerPos": winnerOutcome.WinnerPos,
+        "AllMove": allMove,
+        "GamePos": counter,
+        "Date": today
     });
 
     let lastHistory = history[history.length - 1];
@@ -265,6 +417,7 @@ function SaveGame() {
         }
         let boardDiv = document.createElement("div");
         boardDiv.classList.add("col-4");
+        boardDiv.classList.add("gameboard-" + counter);
         if(i % 3 == 1) {
             boardDiv.classList.add("midBoardCol");
         }
@@ -295,8 +448,8 @@ function SaveGame() {
     card.append(replayButton);
     historyContainer.appendChild(card);
 
-    cont.setAttribute("id", "gameboard-" + conter);
-    replayButton.onclick = function() { Replay(0); };
+    let currentCounter = counter++;
+    replayButton.onclick = function() { Replay(currentCounter); };
 
 
     /*
@@ -329,9 +482,33 @@ function SaveGame() {
         </div>
     */
 
+    localStorage["History"] = JSON.stringify(history);
     console.log(history);
 }
 
 function Replay(boardPos) {
-    console.log("Replay Board: " + boardPos);
+    let historyBoard = document.getElementsByClassName("gameboard-" + boardPos); // col-4 gameboard-POS
+    let currentHistory = history[boardPos];
+
+    // Clear History
+    for(let i = 0; i < historyBoard.length; i++) {
+        historyBoard[i].innerHTML = "";
+        historyBoard[i].classList.remove("winner");
+    }
+
+    // Play Slow Game
+    for(let i = 0; i < currentHistory.AllMove.length; i++) {
+        setTimeout(() => {
+            for(let j = 0; j < currentHistory.AllMove[i].length; j++) {
+                historyBoard[j].innerHTML = currentHistory.AllMove[i][j];
+            }
+        }, 1000 * i); // Millisecond 1000 -> 1 sec
+    }
+
+    setTimeout(() => {
+        for(let i = 0; i < currentHistory.WinnerPos.length; i++) {
+            historyBoard[currentHistory.WinnerPos[i]].classList.add("winner");
+        }
+    }, 1000 * (currentHistory.AllMove.length - 1))
+
 }
